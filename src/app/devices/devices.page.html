@@ -1,0 +1,14 @@
+<app-header [processing]="processing" [title]="title"></app-header>
+<ion-content [fullscreen]="true">
+    <ion-list>
+        <ion-item button detail="false" *ngFor="let device of devices" (click)="trackerData(device)">
+            <ion-label>
+                <h3>{{ device?.name }}</h3>
+                <p>Device Id: <code>{{ device?.id }}</code></p>
+            </ion-label>
+        </ion-item>
+        <ion-item *ngIf="devices.length == 0 && !processing">
+            <ion-label>No Devices Found</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

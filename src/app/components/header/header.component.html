@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="primary">
+            <ion-button fill="outline" (click)="service.logout()">
+                <ion-icon slot="end" name="log-out-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            {{ title }}
+        </ion-title>
+        <ion-progress-bar type="indeterminate" *ngIf="processing"></ion-progress-bar>
+    </ion-toolbar>
+</ion-header>

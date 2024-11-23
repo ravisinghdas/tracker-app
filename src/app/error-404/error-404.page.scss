@@ -1,0 +1,21 @@
+ion-grid {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 253px;
+    }
+    h1 {
+        font-size: 22px;
+        color: var(--ion-color-danger);
+        font-family: monospace;
+        font-weight: 700;
+        span {
+            font-size: 30px;
+        }
+    }
+}

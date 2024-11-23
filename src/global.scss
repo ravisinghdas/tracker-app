@@ -1,0 +1,73 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+
+
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+
+@import "@ionic/angular/css/palettes/dark.system.css";
+@import "~maplibre-gl/dist/maplibre-gl.css";
+.cursor-cls {
+    cursor: pointer;
+}
+
+.mt-15 {
+    margin-top: 15px !important;
+}
+
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+.error-p {
+    margin-top: 5px !important;
+    font-weight: 600 !important;
+    color: #ff1a1a !important;
+    letter-spacing: 1px;
+    font-size: 12px;
+    max-width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.forward-direction{
+    width: 12px;
+}

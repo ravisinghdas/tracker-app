@@ -1,0 +1,43 @@
+<ion-content>
+    <ion-grid class="ion-no-padding">
+        <ion-row class="full">
+            <ion-col size="12" class="center ion-padding">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <ion-row>
+                        <ion-col size="12" class="ion-text-center mb-50">
+                            <img class="logo" src="assets/paj-gps-logo.png" alt="" />
+                        </ion-col>
+
+                        <ion-col size="12" class="ion-text-center">
+                            <ion-item detail="false" lines="none" class="ion-no-padding mb-0">
+                                <ion-icon name="mail-outline" slot="start" size="medium"></ion-icon>
+                                <ion-input type="email" formControlName="email" placeholder="Enter email"></ion-input>
+                            </ion-item>
+                            <ng-container *ngFor="let validation of validation_messages.email">
+                                <p class="error-p" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                                    {{ validation.message }}
+                                </p>
+                            </ng-container>
+                        </ion-col>
+                        <ion-col size="12" class="ion-text-center">
+                            <ion-item detail="false" lines="none" class="mt-15 mb-0 ion-no-padding">
+                                <ion-icon name="lock-closed-outline" slot="start" size="medium"></ion-icon>
+                                <ion-input placeholder="Enter password" [type]="passwordType" formControlName="password" clearOnEdit="false"></ion-input>
+                                <ion-icon class="cursor-cls" [name]="passwordIcon" slot="end" size="small" (click)='hideShowPassword()'>
+                                </ion-icon>
+                            </ion-item>
+                            <ng-container *ngFor="let validation of validation_messages.password">
+                                <p class="error-p" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                                    {{ validation.message }}
+                                </p>
+                            </ng-container>
+                        </ion-col>
+                        <ion-col size="12">
+                            <ion-button expand="block" shape="round" class="ion-text-uppercase ion-margin-vertical" type="submit" [disabled]="processing"><ion-spinner *ngIf="processing" name="bubbles"></ion-spinner><ion-text *ngIf="!processing">SIGN IN</ion-text></ion-button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
