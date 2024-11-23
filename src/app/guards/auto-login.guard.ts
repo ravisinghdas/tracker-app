@@ -19,7 +19,7 @@ export class AutoLoginGuard implements CanMatch {
             take(1),
             map((isAuthenticated) => {
                 if (isAuthenticated) {
-                    this.service.goToRoot('/home/map');
+                    this.service.goToRoot('/map');
                     return false;
                 } else {
                     return true;
