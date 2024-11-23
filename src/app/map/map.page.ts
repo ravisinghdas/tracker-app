@@ -127,6 +127,16 @@ export class MapPage {
             }
         });
 
+        this.map.addLayer({
+            'id': 'poi-labels',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'text-field': ['get', 'description'],
+                'text-justify': 'auto'
+            }
+        });
+
         const device = this.clients.find((device: any) => device.device_id == this.device_id);
         if(device) {
             this.getTrackingData();
