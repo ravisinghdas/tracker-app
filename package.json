@@ -7,9 +7,13 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build:prod": "ng build --configuration=production",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "lint": "ng lint"
+        "lint": "ng lint",
+        "cap:android:setup": "npx cap add android && npx cap sync android",
+        "cap:android:build": "npm run build:prod && npx cap sync android && cd android && ./gradlew assembleDebug",
+        "cap:android:release": "npm run build:prod && npx cap sync android && cd android && ./gradlew assembleRelease"
     },
     "private": true,
     "dependencies": {
